@@ -1,0 +1,27 @@
+code upgraded
+codeupdated
+create another table to store normalized temperature and precipitation data:
+-- ID field must match some STATION table ID
+(so name and location will be known).
+-- allowable ranges will be enforced for other values.
+-- no duplicate ID and MONTH combinations.
+-- temperature is in degrees Fahrenheit.
+-- rainfall is in inches.
+
+CREATE TABLE STATS
+(ID INTEGER REFERENCES STATION(ID),
+MONTH INTEGER CHECK (MONTH BETWEEN 1 AND 12),
+TEMP_F REAL CHECK (TEMP_F BETWEEN -80 AND 150),
+RAIN_I REAL CHECK (RAIN_I BETWEEN 0 AND 100),
+PRIMARY KEY (ID, MONTH));
+
+populate the table STATS with some statistics for January and July:
+
+INSERT INTO STATS VALUES (13, 1, 57.4, 0.31);
+INSERT INTO STATS VALUES (13, 7, 91.7, 5.15);
+INSERT INTO STATS VALUES (44, 1, 27.3, 0.18);
+INSERT INTO STATS VALUES (44, 7, 74.8, 2.11);
+INSERT INTO STATS VALUES (66, 1, 6.7, 2.10);
+INSERT INTO STATS VALUES (66, 7, 65.8, 4.52);
+
+query to look at table STATS in undefined order
