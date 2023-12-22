@@ -2,5 +2,9 @@ This is testfile
 cloning files to the git
 amazon subscription details
 amazon premium details
+<<<<<<< HEAD
 username
 password
+=======
+Amazon details upgraded
+>>>>>>> 1a895bf498877add8d9f5492961fc14503e4ec41
